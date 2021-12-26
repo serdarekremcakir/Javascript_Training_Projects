@@ -32,4 +32,15 @@ function countDown(){
 
 }
 
+const selectedDate = document.querySelector("#selectedDate");
+
+function dateUpdate(){
+    Number.isNaN(selectedDate.valueAsNumber) ? null : targetDate = selectedDate.valueAsNumber;
+    
+}
+
+var sbmt = document.querySelector("button");
+sbmt.addEventListener("click",dateUpdate);
+
+
  setInterval(countDown, 1000);
