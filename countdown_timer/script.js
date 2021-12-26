@@ -2,10 +2,15 @@ const days_ = document.querySelector(".days");
 const hours_ = document.querySelector(".hours");
 const minutes_ = document.querySelector(".minutes");
 const seconds_ = document.querySelector(".seconds");
+const target_date = document.querySelector("#target-date");
+const selectedDate = document.querySelector("#selectedDate");
+const sbmt = document.querySelector("button");
 
+var targetDate;
+localStorage.getItem('targetDate') == null ?  targetDate = new Date("1 January 2022 00:00:00") : targetDate = new Date(localStorage.getItem('targetDate')) ;
+target_date.textContent = `Target Date: ${targetDate.toLocaleString()}`;
+localStorage.setItem('targetDate',targetDate);
 
- var targetDate = new Date("1 January 2022 00:00:00");
-//  console.log("target date:",targetDate)
 
 
 function countDown(){
@@ -30,16 +35,16 @@ function countDown(){
     minutes_.textContent=minutes;
     seconds_.textContent=seconds;
 
-}
-
-const selectedDate = document.querySelector("#selectedDate");
-
-function dateUpdate(){
-    Number.isNaN(selectedDate.valueAsNumber) ? null : targetDate = selectedDate.valueAsNumber;
     
 }
 
-var sbmt = document.querySelector("button");
+
+function dateUpdate(){
+    Number.isNaN(selectedDate.valueAsNumber) ? null : targetDate = selectedDate.valueAsNumber-(180*60*1000);
+    localStorage.setItem('targetDate',new Date(targetDate));
+    target_date.textContent = `Target Date: ${new Date(targetDate).toLocaleString()}`;
+}    
+
 sbmt.addEventListener("click",dateUpdate);
 
 
