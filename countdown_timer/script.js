@@ -5,8 +5,9 @@ const seconds_ = document.querySelector(".seconds");
 const target_date = document.querySelector("#target-date");
 const selectedDate = document.querySelector("#selectedDate");
 const sbmt = document.querySelector("button");
-
+const fixedDate = document.querySelectorAll(".fixedDate");
 var targetDate;
+
 localStorage.getItem('targetDate') == null ?  targetDate = new Date("1 January 2022 00:00:00") : targetDate = new Date(localStorage.getItem('targetDate')) ;
 target_date.textContent = `Target Date: ${targetDate.toLocaleString()}`;
 localStorage.setItem('targetDate',targetDate);
@@ -39,13 +40,31 @@ function countDown(){
 }
 
 
-function dateUpdate(){
+function dateUpdate(e){
+    console.log("e",e.target.textContent)
+    if(e.target.textContent == "Birthday"){
+        targetDate = new Date("12 December 2025 00:00:00")
+    }
+    if(e.target.textContent == "New Year"){
+        targetDate = new Date("1 January 2022 00:00:00")
+    }
     Number.isNaN(selectedDate.valueAsNumber) ? null : targetDate = selectedDate.valueAsNumber-(180*60*1000);
     localStorage.setItem('targetDate',new Date(targetDate));
     target_date.textContent = `Target Date: ${new Date(targetDate).toLocaleString()}`;
+    selectedDate.value='';
 }    
 
+
+
+
+fixedDate.forEach(function(item){
+    item.onclick = dateUpdate;
+})
+
+
 sbmt.addEventListener("click",dateUpdate);
+
+
 
 
  setInterval(countDown, 1000);

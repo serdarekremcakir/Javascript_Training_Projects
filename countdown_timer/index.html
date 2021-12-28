@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,19 +9,38 @@
     <link rel="stylesheet" href="_reboot.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div>
         <div class="form">
-            <div class="form-group">
-                <label for="selectedDate">Date:</label>
-                <input type="datetime-local" id="selectedDate" name="date">
+            <div class="left-box ">Change Date</div>
+            <div class="left-box fixedDate"><a href="#">Birthday</a></div>
+            <div class="left-box fixedDate"><a href="#">New Year</a></div>
+
+            <div class="left-box "><a href="#">XXX</a></div>
+            <div class="pos">
+                <div class="left-box">
+                    <div class="text">
+                        <p>Select Date</p>
+                        <p>HOVER</p>
+                        <p>ME</p>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label for="selectedDate">Date:</label>
+                    <input type="datetime-local" id="selectedDate" name="date">
+                    <button type="submit" class="">Submit</button>
+                </div>
             </div>
-            <button type="submit" class="">Submit</button>
+
+
+
         </div>
 
         <h1>Countdown Timer</h1>
         <div class="contanier">
-        
+
             <div>
                 <p class="count days">--</p>
                 <span>DAYS</span>
@@ -36,7 +56,7 @@
             <div>
                 <p class="count seconds">--</p>
                 <span>SECONDS</span>
-            </div>            
+            </div>
         </div>
         <h2 id="target-date">Target Date: </h2>
     </div>
@@ -44,4 +64,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

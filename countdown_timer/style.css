@@ -8,7 +8,6 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
 }
 
 
@@ -48,26 +47,104 @@ h1{
 }
 
 .form{
-    /* display: none; */
     position: absolute;
     top:20%;
     left: 0;
-    color: #fff;
-    background-color: red;
-    padding: 1rem 1rem;
+    width: 20vw;
 }
 
-.form-group{
-    margin-bottom: 1rem;
+.left-box{
+    width: 15vw;
+    color: black;
+    
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
     font-size: 1.2rem;
     text-align: center;
+    background-color: yellow;
+    transition: 0.5s;
+    margin-bottom: 1rem;
+}
+
+.left-box:first-child{
+    width: 23vw;
+    background-color: orange;
+    padding: 1rem 1rem;
+
+}
+
+.left-box a{
+    padding: 1rem 1rem;
+    display: block;
+}
+
+
+
+.pos{
+    width: 30vw;
+    position: relative;
+    margin-top: 10rem;
+    overflow: hidden;
+}
+
+.pos .left-box{
+    width: 60%;
+    background-color: orange;
+    font-weight: bold;
+    height: 100%;
+}
+
+
+
+.form-group{
+    width: 65%;
+    height: 100%;
+    position: absolute;
+    color: #fff;
+    background-color: rgb(167, 110, 4);
+    padding: 1rem 1rem;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    text-align: center;
+    transition: left .5s;
+    top: 0;
+    left: -1000%;
+   
+
+}
+
+.form-group label{
+    width: 30%;
+}
+
+.form-group input{
+    width: 70%;
+}
+
+.pos:hover .form-group{
+    left: 0;
+}
+
+
+.left-box p{
+    font-size: 0.7rem;
+    letter-spacing: 0.5rem;
+    
+}
+.left-box p:first-child{
+    font-weight: bold;
+    font-size: 1.3rem;
+    letter-spacing: 0;
+    margin-bottom: 1rem;
 }
 
 button{
-    float: right;
     background-color: yellow;
     border-radius: 50px;
     padding: 0.5rem 1.5rem;
+    display: block;
+    margin-left: auto;
+    margin-top: 1rem;
 }
 
 h2{
@@ -77,3 +154,10 @@ h2{
     font-weight: normal;
     font-size: calc(1.5vw + 1.5vh);
 }
+
+@media screen and (max-width:767px) {
+    .left-box, .pos{
+        display: none;
+    }
+}
+
